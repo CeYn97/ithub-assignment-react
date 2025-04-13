@@ -1,0 +1,40 @@
+.button {
+  font-family: inherit;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  border-color: transparent;
+}
+
+.button-icon {
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  place-items: center;
+}
+
+.button-primary,
+.button-secondary {
+  padding: 10px 14px;
+  border-radius: 24px;
+}
+
+.button-primary {
+  background-color: white;
+  color: #1F2429;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: white;
+}
+
+.button-full {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+}

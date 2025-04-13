@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-wrapper {
+  margin-right: auto;
+  font-weight: 500;
+  color: #1F2429;
+}
+
+.person-name {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.person-description {
+  font-size: 10px;
+  line-height: 12px;
+  color: inherit;
+  filter: opacity(0.7);
+}

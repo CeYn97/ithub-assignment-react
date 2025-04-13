@@ -1,0 +1,12 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+
+.scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

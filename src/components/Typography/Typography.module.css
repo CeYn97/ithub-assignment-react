@@ -1,0 +1,27 @@
+.title {
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subtitle {
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  filter: opacity(0.2);
+  margin-top: 4px;
+}
+
+.caption {
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.theme-white {
+  color: #1F2429;
+}
+
+.theme-dark {
+  color: white;
+}

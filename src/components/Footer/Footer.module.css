@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  gap: 8px;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: end;
+}
+
+.footer-logo {
+  height: 8px;
+  width: auto;
+  margin-right: auto;
+}
