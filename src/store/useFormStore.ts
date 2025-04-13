@@ -16,7 +16,7 @@ const defaultData = {
 }
 
 const useFormStore = create<FormState>()((set) => ({
-  step: 1,
+  step: 0,
   total: 8,
   data: { ...defaultData },
   setStep: (newStep) => set(() => ({ step: newStep })),

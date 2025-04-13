@@ -3,7 +3,7 @@ import pages from './pages'
 
 const Router = () => {
   const currentStep = useFormStore(store => store.step)
-  const CurrentPage = pages[currentStep - 1]
+  const CurrentPage = pages[currentStep]
 
   return (
     <CurrentPage />

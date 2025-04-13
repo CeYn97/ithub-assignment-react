@@ -59,8 +59,8 @@ export default function Form({ children, title, schema }: Form) {
           : child
       })}
       <Footer withLogo>
-        {formStep >= 3 && formStep < formStepTotal ? <Button type="back" /> : <></>}
-        {formStep >= 2 && formStep < formStepTotal ? <Button type="next" /> : <></>}
+        {formStep >= 2 && formStep < formStepTotal ? <Button type="back" /> : <></>}
+        {formStep >= 1 && formStep < formStepTotal ? <Button type="next" /> : <></>}
       </Footer>
     </form>
   )

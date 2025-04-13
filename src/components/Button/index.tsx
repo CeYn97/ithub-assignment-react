@@ -14,7 +14,7 @@ function ButtonClose() {
   return (
     <button type="reset" className={clsx(styles.button, styles['button-icon'])} onClick={() => {
       resetFormData()
-      setFormStep(1)
+      setFormStep(0)
     }}>
       <img src={closeIcon} alt="close" />
     </button>
@@ -44,7 +44,7 @@ function ButtonStart() {
   const setStep = useFormStore(store => store.setStep)
 
   return (
-    <button type="button" className={clsx(styles.button, styles['button-full'], styles['button-secondary'])} onClick={() => setStep(2)}>
+    <button type="button" className={clsx(styles.button, styles['button-full'], styles['button-secondary'])} onClick={() => setStep(1)}>
       Оставить фидбек
     </button>
   )
