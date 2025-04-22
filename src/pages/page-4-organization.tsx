@@ -1,5 +1,5 @@
-import { useForm } from "react-hook-form";
 import { formSchema } from "../schema";
+import { useForm } from "react-hook-form";
 import { FormData } from "../schema";
 
 import Rating from "../components/Rating";
@@ -13,8 +13,14 @@ export default function PageMood() {
   return (
     <article className="page page--mood">
       <Header progressBar />
-      <Form title="Какое у тебя настроение после мероприятия?" schema={schema}>
-        <Rating type="emoji" range={5} name="mood" register={register} />
+      <Form title="Оцени уровень организации события" schema={schema}>
+        <Rating
+          type="numeric"
+          range={5}
+          startFrom={1}
+          name="mood"
+          register={register}
+        />
       </Form>
     </article>
   );

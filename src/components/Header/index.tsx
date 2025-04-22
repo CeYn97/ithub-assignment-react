@@ -1,26 +1,27 @@
-import Avatar from "../Avatar"
+import Avatar from "../Avatar";
 
-import Button from "../Button"
+import Button from "../Button";
 
-import usePersonStore from "../../store/usePersonStore"
-import useFormStore from "../../store/useFormStore"
+import usePersonStore from "../../store/usePersonStore";
+import useFormStore from "../../store/useFormStore";
 
-import styles from './Header.module.css'
+import styles from "./Header.module.css";
+import { Stepper } from "../Progress/Stepper.tsx";
 
 interface Header {
-  progressBar?: boolean
+  progressBar?: boolean;
 }
 
 export default function Header({ progressBar = false }: Header) {
-  const personName = usePersonStore(store => store.name)
-  const personDescription = usePersonStore(store => store.description)
-  const personAvatarSrc = usePersonStore(store => store.avatarSrc)
-  const formStep = useFormStore(store => store.step)
-  const formTotal = useFormStore(store => store.total)
+  const personName = usePersonStore((store) => store.name);
+  const personDescription = usePersonStore((store) => store.description);
+  const personAvatarSrc = usePersonStore((store) => store.avatarSrc);
+  const formStep = useFormStore((store) => store.step);
+  const formTotal = useFormStore((store) => store.total);
 
   return (
     <header className={styles.header}>
-      <section className={styles['content-wrapper']}>
+      <section className={styles["content-wrapper"]}>
         <Avatar src={personAvatarSrc} />
         <div className={styles["text-wrapper"]}>
           <p className={styles["person-name"]}>{personName}</p>
@@ -28,8 +29,7 @@ export default function Header({ progressBar = false }: Header) {
         </div>
         <Button type="close" />
       </section>
-      {progressBar && (
-        <progress value={formStep / formTotal} />
-      )}
-    </header>)
+      {progressBar && <Stepper currentStep={formStep} totalStep={formTotal} />}
+    </header>
+  );
 }

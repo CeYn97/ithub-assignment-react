@@ -13,8 +13,17 @@ export default function PageMood() {
   return (
     <article className="page page--mood">
       <Header progressBar />
-      <Form title="Какое у тебя настроение после мероприятия?" schema={schema}>
-        <Rating type="emoji" range={5} name="mood" register={register} />
+      <Form
+        title="Оцени наполнение (спикеры, темы лекций и мастер-классов)"
+        schema={schema}
+      >
+        <Rating
+          type="numeric"
+          range={11}
+          startFrom={0}
+          name="mood"
+          register={register}
+        />
       </Form>
     </article>
   );

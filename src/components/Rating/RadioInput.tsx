@@ -1,21 +1,58 @@
-import type { UseFormRegister } from "react-hook-form"
-import type { FormData } from "../../schema"
+// RadioInput.tsx
+import type { UseFormRegister } from "react-hook-form";
+import type { FormData } from "../../schema";
+import styles from "./Rating.module.css";
+import clsx from "clsx";
+// import { useState } from "react";
 
 interface RadioInput {
-  register: UseFormRegister<Partial<FormData>>
-  name: keyof FormData
-  value: string | number
+  register: UseFormRegister<FormData>;
+  name: keyof FormData;
+  value: string | number;
   icon: {
-    src: string
-    alt: string
-  }
+    src: string;
+    alt: string;
+  };
+  variant?: "emoji" | "numeric";
 }
 
-export default function RadioInput({ register, name, value, icon }: RadioInput) {
+export default function RadioInput({
+  register,
+  name,
+  value,
+  icon,
+  variant = "emoji",
+}: RadioInput) {
+  const id = `${name}__${value}`;
+
   return (
-    <label key={`${name}__${value}`} htmlFor={`${name}__${value}`}>
-      <img src={icon.src} alt={icon.alt} />
-      <input type="radio" id={`name__${value}`} {...register(name)} value={value} />
+    <label
+      htmlFor={id}
+      className={clsx(
+        styles.inputWrapper,
+        variant === "emoji" ? styles.emojiInput : styles.numericInput
+      )}
+    >
+      <input
+        type="radio"
+        id={id}
+        {...register(name)}
+        value={value}
+        className={styles.radio}
+      />
+      <div className={styles.iconContainer}>
+        <img
+          src={icon.src}
+          alt={icon.alt}
+          className={clsx(
+            styles.icon,
+            variant === "emoji" ? styles.emojiIcon : styles.numericIcon
+          )}
+        />
+        {variant === "numeric" && (
+          <span className={styles.numericValue}>{+value}</span>
+        )}
+      </div>
     </label>
-  )
+  );
 }

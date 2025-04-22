@@ -3,14 +3,7 @@ import { useForm } from "react-hook-form";
 
 import Header from "../components/Header";
 import Form from "../components/Form";
-import Select from "../components/Select";
-
-const cathedrals = [
-  "программирование и веб-разработка",
-  "дизайн",
-  "цифровой маркетинг",
-  "разработка игр",
-];
+import Legend from "../components/Legend";
 
 export default function PageMood() {
   const schema = formSchema.pick({ cathedral: true });
@@ -19,8 +12,11 @@ export default function PageMood() {
   return (
     <article className="page page--mood">
       <Header progressBar />
-      <Form title="На каком направлении ты обучаешься?" schema={schema}>
-        <Select options={cathedrals} name="cathedral" register={register} />
+      <Form
+        title="Что тебе не понравилось? Какие есть пожелания?"
+        schema={schema}
+      >
+        <Legend />
       </Form>
     </article>
   );
