@@ -17,5 +17,5 @@ export default [
   PageSpeakers,
   PageOffers,
   PageRecommendation,
-  //   PageForm,
+  // PageForm,
 ];

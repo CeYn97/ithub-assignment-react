@@ -1,0 +1,17 @@
+.textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  resize: none;
+  min-height: 80px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}

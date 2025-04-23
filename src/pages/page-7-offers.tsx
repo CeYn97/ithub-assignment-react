@@ -1,13 +1,14 @@
 import { formSchema } from "../schema";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
+// import { FormData } from "../schema";
 
+import Feedback from "../components/Feedback/feedBack";
 import Header from "../components/Header";
 import Form from "../components/Form";
-import Legend from "../components/Legend";
 
 export default function PageMood() {
-  const schema = formSchema.pick({ cathedral: true });
-  const { register } = useForm();
+  // const { register } = useForm<FormData>();
+  const schema = formSchema.pick({ feedback: true });
 
   return (
     <article className="page page--mood">
@@ -16,7 +17,7 @@ export default function PageMood() {
         title="Что тебе не понравилось? Какие есть пожелания?"
         schema={schema}
       >
-        <Legend />
+        <Feedback name="feedback" />
       </Form>
     </article>
   );

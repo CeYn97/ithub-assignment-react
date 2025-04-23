@@ -1,4 +1,3 @@
-// RadioInput.tsx
 import type { UseFormRegister } from "react-hook-form";
 import type { FormData } from "../../schema";
 import styles from "./Rating.module.css";

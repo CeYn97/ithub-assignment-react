@@ -1,23 +1,29 @@
-import { FormData } from "../schema";
 import { formSchema } from "../schema";
 import { useForm } from "react-hook-form";
+import { FormData } from "../schema";
 
+import Rating from "../components/Rating";
 import Header from "../components/Header";
 import Form from "../components/Form";
-import Rating from "../components/Rating";
 
 export default function PageMood() {
-  const schema = formSchema.pick({ cathedral: true });
   const { register } = useForm<FormData>();
+  const schema = formSchema.pick({ mood: true });
 
   return (
     <article className="page page--mood">
       <Header progressBar />
       <Form
-        title="Хочешь подписаться на предстоящие профильные события?"
+        title="Порекомендуешь ли ты своим школьным друзьям прийти на следующее подобное мероприятие?"
         schema={schema}
       >
-        <Rating type="emoji" range={5} name="mood" register={register} />
+        <Rating
+          type="numeric"
+          range={11}
+          startFrom={0}
+          name="mood"
+          register={register}
+        />
       </Form>
     </article>
   );

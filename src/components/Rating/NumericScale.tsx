@@ -20,24 +20,43 @@ export default function NumericScale({
   name,
   startFrom = 1,
 }: NumericScale) {
+  const values = Array.from({ length: range }, (_, i) => startFrom + i);
+
+  const firstRow = values.slice(0, 5);
+  const secondRow = values.slice(5);
+
   return (
-    <section className={styles.scale}>
-      {Array.from({ length: range }, (_, i) => {
-        const actualValue = startFrom + i;
-        return (
+    <section className={styles.scaleGroup}>
+      <div className={styles.scaleRow}>
+        {firstRow.map((val) => (
           <RadioInput
-            key={`${name}__${actualValue}`}
+            key={`${name}__${val}`}
             register={register}
             name={name}
-            value={actualValue}
+            value={val}
             variant="numeric"
             icon={{
               src: ellipseIcon,
-              alt: `rate-${actualValue}`,
+              alt: `rate-${val}`,
             }}
           />
-        );
-      })}
+        ))}
+      </div>
+      <div className={styles.scaleRow}>
+        {secondRow.map((val) => (
+          <RadioInput
+            key={`${name}__${val}`}
+            register={register}
+            name={name}
+            value={val}
+            variant="numeric"
+            icon={{
+              src: ellipseIcon,
+              alt: `rate-${val}`,
+            }}
+          />
+        ))}
+      </div>
     </section>
   );
 }
