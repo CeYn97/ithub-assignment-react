@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { email, z } from "zod";
 
 const cathedralSchema = z.enum([
   "программирование и веб-разработка",
@@ -12,6 +12,7 @@ export const formSchema = z.object({
   mood: z.string(),
   cathedral: cathedralSchema,
   feedback: z.string().optional(),
+  email: z.string().email("Неверный email").optional(),
 });
 
 export type FormData = z.infer<typeof formSchema>;

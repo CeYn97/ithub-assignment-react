@@ -6,7 +6,8 @@ import PageFilling from "./page-5-filling";
 import PageSpeakers from "./page-6-speakers";
 import PageOffers from "./page-7-offers";
 import PageRecommendation from "./page-8-recommendation";
-// import PageForm from "./page-9-form";
+import PageNewsletter from "./page-9-newsletter";
+import PageFinal from "./page-10-final";
 
 export default [
   PageStart,
@@ -17,5 +18,6 @@ export default [
   PageSpeakers,
   PageOffers,
   PageRecommendation,
-  // PageForm,
+  PageNewsletter,
+  PageFinal,
 ];
