@@ -19,8 +19,8 @@
 }
 
 .select-option:has(:checked) {
-  background-color: rgba(31, 36, 41, 0.9);
-  color: white;
+  background-color: white;
+  color: rgba(31, 36, 41);
 }
 
 .select-input {
