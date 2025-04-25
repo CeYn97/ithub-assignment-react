@@ -6,9 +6,9 @@ import Header from "../components/Header";
 import Form from "../components/Form";
 import Email from "../components/Email/email";
 
-export default function PageMood() {
+export default function PageNewsletter() {
   //   const { register } = useForm<FormData>();
-  const schema = formSchema.pick({ mood: true });
+  const schema = formSchema.pick({ email: true });
 
   return (
     <article className="page page--mood">

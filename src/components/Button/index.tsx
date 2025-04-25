@@ -97,7 +97,7 @@ import useFormStore from "../../store/useFormStore";
 import closeIcon from "../../assets/icons/close.svg";
 
 interface Button {
-  type: "close" | "submit" | "back" | "next" | "start";
+  type: "close" | "submit" | "back" | "next" | "start" | "bonuspack";
 }
 
 function ButtonClose() {
@@ -172,6 +172,22 @@ function ButtonSubmit() {
   );
 }
 
+function ButtonDownload() {
+  const handleDownload = () => {
+    console.log("Бонус-пак от спикера скачан!");
+  };
+
+  return (
+    <button
+      type="button"
+      className={clsx(styles.buttonDownload, styles["button-tertiary"])}
+      onClick={handleDownload}
+    >
+      Скачать бонус-пак от спикера
+    </button>
+  );
+}
+
 export default function Button({ type }: Button) {
   return {
     close: <ButtonClose />,
@@ -179,5 +195,6 @@ export default function Button({ type }: Button) {
     back: <ButtonBack />,
     next: <ButtonNext />,
     start: <ButtonStart />,
+    bonuspack: <ButtonDownload />,
   }[type];
 }

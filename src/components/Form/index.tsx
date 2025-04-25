@@ -107,6 +107,7 @@ export default function Form({ children, title, schema }: Form) {
   );
   const defaultValues: Partial<FormData> = fieldNames.reduce(
     (acc, fieldName) => {
+      // @ts-ignore
       acc[fieldName] = formData[fieldName];
       return acc;
     },
@@ -122,7 +123,12 @@ export default function Form({ children, title, schema }: Form) {
 
   const onSubmit = (data: Partial<FormData>) => {
     setFormData(data);
-    setFormStep(formStep + 1);
+
+    if (formStep === formStepTotal) {
+      setFormStep(formStep + 1);
+    } else {
+      setFormStep(formStep + 1);
+    }
   };
 
   return (

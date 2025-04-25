@@ -39,9 +39,15 @@ interface FormState {
   resetData: () => void;
 }
 
-const defaultData = {
+const defaultData: FormData = {
   mood: "",
   cathedral: "" as FormData["cathedral"],
+  speakers: "" as FormData["speakers"],
+  feedback: "",
+  email: "",
+  organization: "",
+  filling: "",
+  recommendation: "",
 };
 
 const useFormStore = create<FormState>()((set) => ({

@@ -6,9 +6,9 @@ import Rating from "../components/Rating";
 import Header from "../components/Header";
 import Form from "../components/Form";
 
-export default function PageMood() {
+export default function PageFilling() {
   const { register } = useForm<FormData>();
-  const schema = formSchema.pick({ mood: true });
+  const schema = formSchema.pick({ filling: true });
 
   return (
     <article className="page page--mood">
@@ -21,7 +21,7 @@ export default function PageMood() {
           type="numeric"
           range={11}
           startFrom={0}
-          name="mood"
+          name="filling"
           register={register}
         />
       </Form>

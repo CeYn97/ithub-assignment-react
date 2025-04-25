@@ -12,7 +12,7 @@ const cathedrals = [
   "разработка игр",
 ];
 
-export default function PageMood() {
+export default function PageCathedral() {
   const schema = formSchema.pick({ cathedral: true });
   const { register } = useForm();
 
