@@ -1,4 +1,4 @@
-import { z } from "zod"; // возможно добавить email
+import { z } from "zod";
 
 const cathedralSchema = z.enum([
   "программирование и веб-разработка",
