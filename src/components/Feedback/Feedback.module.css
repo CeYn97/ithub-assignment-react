@@ -4,7 +4,6 @@
   border-radius: 12px;
   padding: 10px;
   font-size: 15px;
-  color: white;
   resize: none;
   min-height: 80px;
   outline: none;
@@ -13,5 +12,5 @@
 }
 
 .textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  filter: opacity(0.6);
 }

@@ -23,6 +23,9 @@ export default function PageRecommendations() {
           startFrom={0}
           name="recommendation"
           register={register}
+          withLegend
+          legendLeft="0 = Вряд ли..."
+          legendRight="10 = По любому!"
         />
       </Form>
     </article>

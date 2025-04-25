@@ -13,6 +13,8 @@ interface Rating {
   range: number;
   startFrom?: number;
   withLegend?: boolean;
+  legendLeft?: string;
+  legendRight?: string;
   register: UseFormRegister<FormData>;
   name: keyof FormData;
 }
@@ -26,7 +28,9 @@ export default function Rating({ type, withLegend = false, ...props }: Rating) {
   return (
     <section className={clsx(styles.rating)}>
       <Scale {...props} />
-      {withLegend && <Legend />}
+      {withLegend && props.legendLeft && props.legendRight && (
+        <Legend left={props.legendLeft} right={props.legendRight} />
+      )}
     </section>
   );
 }
