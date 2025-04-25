@@ -1,13 +1,10 @@
 import { formSchema } from "../schema";
-// import { useForm } from "react-hook-form";
-// import { FormData } from "../schema";
 
 import Header from "../components/Header";
 import Form from "../components/Form";
 import Email from "../components/Email/email";
 
 export default function PageNewsletter() {
-  //   const { register } = useForm<FormData>();
   const schema = formSchema.pick({ email: true });
 
   return (
